@@ -5,19 +5,19 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden min-h-[115vh] bg-[#FBFBF9] text-[#2C2C2C] flex flex-col items-center justify-center px-4 py-20">
       {/* Background Blobs */}
-      <div className="absolute w-[800px] h-[800px] bg-[#FADADD] rounded-full blur-3xl opacity-70 top-[-300px] right-[-150px] z-0"></div>
-      <div className="absolute w-[700px] h-[700px] bg-[#E0D7F8] rounded-full blur-2xl opacity-60 bottom-[-200px] left-[-100px] z-0"></div>
+      <div className="absolute w-[700px] h-[700px] bg-[#3ee8ff] rounded-full blur-[160px] opacity-40 top-[-250px] left-[-200px] z-[0]"></div>
+<div className="absolute w-[600px] h-[600px] bg-[#3ee8ff] rounded-full blur-[180px] opacity-40 bottom-[-200px] right-[-150px] z-[0]"></div>
 
       {/* Center Content */}
       <div className="relative mt-8 z-10 max-w-5xl text-center">
-        <h1 className="text-6xl text-gray-700 font-bold leading-tight mb-4">
-  Style meets Intelligence<br />
-  with
-  <br />
-  <span className="text-6xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-pulse drop-shadow-lg">
-    StyleSense
-  </span>
-</h1>
+        <h1 className="text-5xl text-gray-700 font-bold leading-tight mb-4">
+          Style meets Intelligence<br />
+          with
+          
+          <span className="pl-3 text-5xl bg-gradient-to-r from-[#2da5b4] via-[#2da5b4] to-[#2da5b4] bg-clip-text text-transparent animate-ulse drop-shadow-lg">
+            AI
+          </span>
+        </h1>
 
         <p className="text-lg text-[#3b3b3b] max-w-2xl mx-auto">
           Upload a photo and let our intelligent stylist suggest outfits that match your vibe.
@@ -31,7 +31,7 @@ export default function Home() {
         <div className="col-span-2 bg-white rounded-3xl p-4 text-center border border-[#f3f3f3]">
           <div className="px-6 sm:px-12 py-6 sm:py-10 border border-dashed border-[#d8d8db] rounded-2xl">
             <div className="text-center max-w-md mx-auto space-y-4">
-              <button className="inline-flex items-center justify-center w-full py-3 px-4 bg-[#937ecd] rounded-full text-white hover:bg-[#d4767e] transition h-[56px] text-lg font-semibold">
+              <button className="inline-flex items-center justify-center w-full py-3 px-4 bg-[#2da5b4] rounded-full text-white hover:bg-[#d4767e] transition h-[56px] text-lg font-semibold">
                 <UploadCloud className="mr-2" size={20} />
                 Upload your clothes
               </button>

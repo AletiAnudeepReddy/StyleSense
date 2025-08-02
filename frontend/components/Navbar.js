@@ -16,29 +16,30 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="w-full h-17 fixed top-0 left-0 z-50 bg-[#FBFBF9]/60 backdrop-blur-md shadow-xs">
+        <header className="w-full h-17 fixed top-0 left-0 z-50 bg-white backdrop-blur-md shadow-xs">
+        
 
             <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className="flex items-center tracking-wide text-3xl font-bold text-[#2C2C2C] space-x-2">
-                    
+                    <Shirt size={30} className="text-[#2da5b4]"/>
                     <span>
-                        Style<span className=" text-[#876cd0]">Sense</span>
+                        Style<span className=" text-[#2da5b4]">Sense</span>
                     </span>
                     
                 </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center space-x-6">
-                    <Link href="/explore" className="flex items-center hover:scale-103 gap-1.5 text text-[#2C2C2C] hover:text-[#ed858f] transition">
+                    <Link href="/explore" className="flex items-center hover:scale-103 gap-1.5 text text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Shirt size={16.5} />
                         Explore Styles
                     </Link>
-                    <Link href="/upload" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#ed858f] transition">
+                    <Link href="/upload" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Upload size={16.5} />
                         Upload Style
                     </Link>
-                    <Link href="/about" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#ed858f] transition">
+                    <Link href="/about" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Info size={16.5} />
                         About Us
                     </Link>
@@ -46,14 +47,14 @@ export default function Navbar() {
                     {/* Auth Buttons */}
                     <Link
                         href="/login"
-                        className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-2xl text-[#2C2C2C] hover:bg-[#E0D7F8] transition border border-[#E0D7F8]"
+                        className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-2xl text-[#2C2C2C] hover:bg-[#3ee8ff]/20 transition border border-[#E0D7F8]"
                     >
                         <LogIn size={16} />
                         Login
                     </Link>
                     <Link
                         href="/signup"
-                        className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-xl bg-[#876cd0] text-white hover:bg-[#7b68af] transition"
+                        className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-xl bg-[#2da5b4] text-white hover:bg-[#63a2aa] transition"
                     >
                         <UserPlus size={16} />
                         Sign Up
@@ -72,15 +73,15 @@ export default function Navbar() {
             {/* Mobile Dropdown */}
             {isOpen && (
                 <div className="md:hidden bg-[#FBFBF9] border-t border-[#E0D7F8] px-4 pb-4 space-y-4">
-                    <Link href="/explore" className="flex items-center gap-2 text-[#2C2C2C] hover:text-[#ed858f] transition">
+                    <Link href="/explore" className="flex items-center gap-2 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Shirt size={18} />
                         Explore Styles
                     </Link>
-                    <Link href="/upload" className="flex items-center gap-2 text-[#2C2C2C] hover:text-[#ed858f] transition">
+                    <Link href="/upload" className="flex items-center gap-2 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Upload size={18} />
                         Upload Style
                     </Link>
-                    <Link href="/about" className="flex items-center gap-2 text-[#2C2C2C] hover:text-[#ed858f] transition">
+                    <Link href="/about" className="flex items-center gap-2 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Info size={18} />
                         About Us
                     </Link>
