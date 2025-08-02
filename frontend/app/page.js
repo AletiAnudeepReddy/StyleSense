@@ -1,103 +1,87 @@
 import Image from "next/image";
+import { UploadCloud, Info } from "lucide-react"; // You can install lucide-react if not already
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative overflow-hidden min-h-[115vh] bg-[#FBFBF9] text-[#2C2C2C] flex flex-col items-center justify-center px-4 py-20">
+      {/* Background Blobs */}
+      <div className="absolute w-[800px] h-[800px] bg-[#FADADD] rounded-full blur-3xl opacity-70 top-[-300px] right-[-150px] z-0"></div>
+      <div className="absolute w-[700px] h-[700px] bg-[#E0D7F8] rounded-full blur-2xl opacity-60 bottom-[-200px] left-[-100px] z-0"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Center Content */}
+      <div className="relative mt-8 z-10 max-w-5xl text-center">
+        <h1 className="text-6xl text-gray-700 font-bold leading-tight mb-4">
+  Style meets Intelligence<br />
+  with
+  <br />
+  <span className="text-6xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-pulse drop-shadow-lg">
+    StyleSense
+  </span>
+</h1>
+
+        <p className="text-lg text-[#3b3b3b] max-w-2xl mx-auto">
+          Upload a photo and let our intelligent stylist suggest outfits that match your vibe.
+        </p>
+      </div>
+
+
+      {/* Upload Section */}
+      <div className="relative z-10 mt-16 grid grid-cols-1 md:grid-cols-5 gap-5 items-center w-full max-w-6xl mx-auto">
+        {/* Left Upload Area (2/5) */}
+        <div className="col-span-2 bg-white rounded-3xl p-4 text-center border border-[#f3f3f3]">
+          <div className="px-6 sm:px-12 py-6 sm:py-10 border border-dashed border-[#d8d8db] rounded-2xl">
+            <div className="text-center max-w-md mx-auto space-y-4">
+              <button className="inline-flex items-center justify-center w-full py-3 px-4 bg-[#937ecd] rounded-full text-white hover:bg-[#d4767e] transition h-[56px] text-lg font-semibold">
+                <UploadCloud className="mr-2" size={20} />
+                Upload your clothes
+              </button>
+              <p className="hidden sm:block text-sm font-medium text-[#5c5d6b]">
+                Or just drop them here
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div className="my-5 w-full border-t border-dashed border-[#D8D8DB]"></div>
+
+            {/* Samples */}
+            <div className="text-center">
+              <p className="text-base text-[#5c5d6b] mb-3">No image? Try one of these</p>
+              <ul className="flex justify-center space-x-3">
+                {[
+                  "https://assets.fitroom.app/assets/clothes/686be0c8c1ac61333d6ccd83/thumbnailOTu5awAqyfrA2XsIFtZci.jpeg",
+                  "https://assets.fitroom.app/assets/clothes/686be094c1ac61333d6ccbc3/thumbnail867qFb3JRes72higdQiTt.jpg",
+                  "https://assets.fitroom.app/assets/clothes/686be05ac1ac61333d6cca06/thumbnaileKNN79ujTWPxJjS587sgg.jpg",
+                  "https://assets.fitroom.app/assets/clothes/686be025c1ac61333d6cc893/thumbnail9gGBfK9qi7aMoqXyj2seR.jpg",
+                ].map((src, idx) => (
+                  <li key={idx} className="inline-block">
+                    <button className="w-12 h-12 rounded overflow-hidden hover:opacity-80 transition">
+                      <img src={src} alt={`sample-${idx}`} className="w-full h-full object-cover" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Tips */}
+            <div className="mt-6 inline-flex items-center justify-center text-[#5c5d6b] gap-1 cursor-pointer hover:text-[#2C2C2C] transition">
+              <Info size={14} />
+              <p className="text-xs font-semibold">Upload tips</p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* Right Banner Image (3/5) */}
+        <div className="col-span-3 flex justify-center">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/banner.webp"
+            alt="Fashion Banner"
+            width={630}
+            height={420}
+            className="rounded-2xl shadow-xl shadow-white"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
+
     </div>
   );
 }
