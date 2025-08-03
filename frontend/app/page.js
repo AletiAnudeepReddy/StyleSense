@@ -8,8 +8,8 @@ export default function Home() {
   return (<>
     <div className="relative overflow-hidden min-h-[115vh] bg-[#FBFBF9] text-[#2C2C2C] flex flex-col items-center justify-center px-4 py-20">
       {/* Background Blobs */}
-      <div className="absolute w-[700px] h-[700px] bg-[#3ee8ff] rounded-full blur-[160px] opacity-40 top-[-250px] left-[-200px] z-[0]"></div>
-      <div className="absolute w-[600px] h-[600px] bg-[#3ee8ff] rounded-full blur-[180px] opacity-40 bottom-[-200px] right-[-150px] z-[0]"></div>
+      <div className="absolute w-[700px] h-[700px] bg-[#3ee8ff] rounded-full blur-[160px] opacity-30 top-[-250px] left-[-200px] z-[0]"></div>
+      <div className="absolute w-[600px] h-[600px] bg-[#3ee8ff] rounded-full blur-[180px] opacity-30 bottom-[-200px] right-[-150px] z-[0]"></div>
 
       {/* Center Content */}
       <div className="relative mt-8 z-10 max-w-5xl text-center">
@@ -86,27 +86,27 @@ export default function Home() {
       </div>
 
     </div>
-    <div className="container max-w-6xl mx-auto pt-12 pb-4">
-      <p className="font-bold text-2xl leading-[22px] text-center mb-14 text-neutral-600">
+    <div className="container max-w-6xl mx-auto py-20 pb-4">
+      <p className="font-bold text-2xl leading-[22px] text-center mb-8 text-neutral-500">
         Trusted by fashion-forward platforms
       </p>
-      <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-11 [&_li]:mobile:mx-6 [&_img]:max-w-none animate-infinite-scroll">
+      <div className="w-full inline-flex mb-7 flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_li]:mobile:mx-6 [&_img]:max-w-none animate-infinite-scroll">
           <li><img src="/logos/Asos.svg.png" className="opacity-65" height="48" width="120" alt="ASOS" /></li>
           <li><img src="/logos/zalando.png" height="48" width="140" alt="Zalando" /></li>
           <li><img src="/logos/shopify.webp" height="48" width="140" alt="Shopify" /></li>
-          <li><img src="/logos/hm.png" height="30" width="100" alt="H&M" /></li>
+          <li><img src="/logos/hm.png" height="30" width="80" alt="H&M" /></li>
           <li><img src="/logos/myntra.png" height="48" width="130" alt="Myntra" /></li>
-          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="160" alt="Urban Outfitters" /></li>
-          <li><img src="/logos/pinterest.png" className="opacity-65" height="35" width="80" alt="Pinterest" /></li>
+          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="140" alt="Urban Outfitters" /></li>
+          <li><img src="/logos/pinterest.png" className="opacity-65" height="35" width="60" alt="Pinterest" /></li>
         </ul>
         <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_li]:mobile:mx-6 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
           <li><img src="/logos/Asos.svg.png" className="opacity-65" height="48" width="120" alt="ASOS" /></li>
           <li><img src="/logos/zalando.png" height="48" width="140" alt="Zalando" /></li>
           <li><img src="/logos/shopify.webp" height="48" width="140" alt="Shopify" /></li>
-          <li><img src="/logos/hm.png" height="30" width="100" alt="H&M" /></li>
+          <li><img src="/logos/hm.png" height="30" width="80" alt="H&M" /></li>
           <li><img src="/logos/myntra.png" height="48" width="130" alt="Myntra" /></li>
-          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="160" alt="Urban Outfitters" /></li>
+          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="140" alt="Urban Outfitters" /></li>
           <li><img src="/logos/pinterest.png" className="opacity-65" height="35" width="60" alt="Pinterest" /></li>
         </ul>
       </div>

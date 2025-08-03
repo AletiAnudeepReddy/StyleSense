@@ -6,10 +6,10 @@ const Subscribe = () => {
             <div className="w-full py-12 px-6 sm:px-12 text-center text-white">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                     Discover Your <span className="bg-gradient-to-r from-[#2da5b4] via-[#2da5b4] to-[#2da5b4] text-transparent bg-clip-text font-bold drop-shadow-[0_0_20px_white]">
-  Perfect Look
-</span> with AI
+                        Perfect Look
+                    </span> with AI
                 </h2>
-                
+
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <input
