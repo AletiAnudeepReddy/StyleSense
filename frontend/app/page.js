@@ -2,18 +2,18 @@ import Image from "next/image";
 import { UploadCloud, Info } from "lucide-react"; // You can install lucide-react if not already
 
 export default function Home() {
-  return (
+  return (<>
     <div className="relative overflow-hidden min-h-[115vh] bg-[#FBFBF9] text-[#2C2C2C] flex flex-col items-center justify-center px-4 py-20">
       {/* Background Blobs */}
       <div className="absolute w-[700px] h-[700px] bg-[#3ee8ff] rounded-full blur-[160px] opacity-40 top-[-250px] left-[-200px] z-[0]"></div>
-<div className="absolute w-[600px] h-[600px] bg-[#3ee8ff] rounded-full blur-[180px] opacity-40 bottom-[-200px] right-[-150px] z-[0]"></div>
+      <div className="absolute w-[600px] h-[600px] bg-[#3ee8ff] rounded-full blur-[180px] opacity-40 bottom-[-200px] right-[-150px] z-[0]"></div>
 
       {/* Center Content */}
       <div className="relative mt-8 z-10 max-w-5xl text-center">
         <h1 className="text-5xl text-gray-700 font-bold leading-tight mb-4">
           Style meets Intelligence<br />
           with
-          
+
           <span className="pl-3 text-5xl bg-gradient-to-r from-[#2da5b4] via-[#2da5b4] to-[#2da5b4] bg-clip-text text-transparent animate-ulse drop-shadow-lg">
             AI
           </span>
@@ -83,5 +83,78 @@ export default function Home() {
       </div>
 
     </div>
+    <div className="container max-w-6xl mx-auto pt-12 pb-4">
+      <p className="font-bold text-2xl leading-[22px] text-center mb-14 text-neutral-600">
+        Trusted by fashion-forward platforms
+      </p>
+      <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-11 [&_li]:mobile:mx-6 [&_img]:max-w-none animate-infinite-scroll">
+          <li><img src="/logos/Asos.svg.png" className="opacity-65" height="48" width="120" alt="ASOS" /></li>
+          <li><img src="/logos/zalando.png" height="48" width="140" alt="Zalando" /></li>
+          <li><img src="/logos/shopify.webp" height="48" width="140" alt="Shopify" /></li>
+          <li><img src="/logos/hm.png" height="30" width="100" alt="H&M" /></li>
+          <li><img src="/logos/myntra.png" height="48" width="130" alt="Myntra" /></li>
+          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="160" alt="Urban Outfitters" /></li>
+          <li><img src="/logos/pinterest.png" className="opacity-65" height="35" width="80" alt="Pinterest" /></li>
+        </ul>
+        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_li]:mobile:mx-6 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+          <li><img src="/logos/Asos.svg.png" className="opacity-65" height="48" width="120" alt="ASOS" /></li>
+          <li><img src="/logos/zalando.png" height="48" width="140" alt="Zalando" /></li>
+          <li><img src="/logos/shopify.webp" height="48" width="140" alt="Shopify" /></li>
+          <li><img src="/logos/hm.png" height="30" width="100" alt="H&M" /></li>
+          <li><img src="/logos/myntra.png" height="48" width="130" alt="Myntra" /></li>
+          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="160" alt="Urban Outfitters" /></li>
+          <li><img src="/logos/pinterest.png" className="opacity-65" height="35" width="60" alt="Pinterest" /></li>
+        </ul>
+      </div>
+    </div>
+    <section className="relative w-full px-6 py-24 bg-[#FBFBF9] overflow-hidden">
+      {/* Gradient background blur */}
+      <div className="absolute w-[700px] h-[500px] bg-[#3ee8ff] rounded-full blur-3xl opacity-20 top-[-100px] right-[-150px] z-[0]"></div>
+      <div className="absolute w-[700px] h-[500px] bg-[#3ee8ff] rounded-full blur-3xl opacity-20 bottom-[-100px] left-[-100px] z-[0]"></div>
+
+      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 items-center gap-16 z-10">
+        {/* Text section */}
+        <div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-700 leading-tight">
+            How to Use <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] text-transparent bg-clip-text">StyleSense</span>
+          </h2>
+          <p className="text-gray-700 text-lg mb-8">
+            Using StyleSense is as easy as dressing up! Follow these simple steps to discover your perfect look:
+          </p>
+          <ul className="space-y-5 text-base md:text-lg text-gray-800">
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
+              Upload your photo showcasing your current outfit.
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
+              Our AI detects your fashion style using Deep Learning.
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
+              Get curated outfit recommendations tailored to your style.
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
+              Explore similar styles and shop them instantly.
+            </li>
+          </ul>
+        </div>
+
+        {/* Illustration */}
+        <div className="relative w-full flex justify-center">
+          <img
+            src="/use.webp"
+            alt="How StyleSense works"
+            className="w-full max-w-lg rounded-2xl shadow-xl"
+          />
+        </div>
+      </div>
+    </section>
+
+
+
+  </>
   );
 }
