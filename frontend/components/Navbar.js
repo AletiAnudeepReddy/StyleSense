@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
     Menu,
     Shirt,
@@ -10,23 +11,28 @@ import {
     UserPlus,
     Sparkles, // You can replace with any logo-like icon or your own image
 } from "lucide-react";
-import { Scissors  } from "lucide-react"
+import { Scissors } from "lucide-react"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <header className="w-full h-16 fixed top-0 left-0 z-50 bg-white backdrop-blur-md shadow-xs">
-        
+
 
             <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" className="flex items-center tracking-wide text-3xl font-bold text-[#2C2C2C] space-x-2">
-                    <Shirt size={30} className="text-[#2da5b4]"/>
+                <Link href="/" className="flex items-center tracking-wide text-3xl font-bold text-[#2C2C2C] space-x-3">
+                    <Image
+                        src="/icon2.png"  // Ensure this image exists in your `public` folder
+                        alt="StyleSense Logo"
+                        width={45}
+                        height={45}
+                        className="object-contain opacity-80 text-[#2da5b4] bg-[#2da5b4]/20 border border-[#2da5b4] rounded-full p-1"
+                    />
                     <span>
                         Style<span className=" text-[#2da5b4]">Sense</span>
                     </span>
-                    
                 </Link>
 
                 {/* Desktop Navigation */}

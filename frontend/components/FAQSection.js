@@ -53,7 +53,7 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="bg-[#FBFBF9] py-15 px-4 sm:px-8">
+        <section className="bg-[#FBFBF9] py-15 pb-20 px-4 sm:px-8">
             <div className="max-w-4xl mx-auto text-center mb-9">
                 <h2 className="text-4xl font-bold text-gray-700">
                     Frequently Asked{" "}

@@ -243,7 +243,7 @@ export default function Home() {
     <section className="container mx-auto max-w-6xl">
       <UseCases />
     </section>
-    <section className="bg-[#FBFBF9]  container mx-auto">
+    <section className="bg-[#FBFBF9]">
       <Subscribe />
     </section>
 
