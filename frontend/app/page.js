@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { UploadCloud, Info } from "lucide-react"; // You can install lucide-react if not already
+import Subscribe from "@/components/Subscribe";
+import UseCases from "@/components/UseCases";
+import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
   return (<>
@@ -108,7 +111,7 @@ export default function Home() {
         </ul>
       </div>
     </div>
-    <section className="relative w-full px-6 py-24 bg-[#FBFBF9] overflow-hidden">
+    <section className="relative w-full px-6 py-20 bg-[#FBFBF9] overflow-hidden">
       {/* Gradient background blur */}
       <div className="absolute w-[700px] h-[500px] bg-[#3ee8ff] rounded-full blur-3xl opacity-20 top-[-100px] right-[-150px] z-[0]"></div>
       <div className="absolute w-[700px] h-[500px] bg-[#3ee8ff] rounded-full blur-3xl opacity-20 bottom-[-100px] left-[-100px] z-[0]"></div>
@@ -116,13 +119,40 @@ export default function Home() {
       <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 items-center gap-16 z-10">
         {/* Text section */}
         <div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-700 leading-tight">
-            How to Use <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] text-transparent bg-clip-text">StyleSense</span>
-          </h2>
+          <div className="flex flex-col ">
+            {/* Icon Circle */}
+            <div className="w-14 h-14 p-2 rounded-full bg-[#EAFDFF] mb-4">
+              <div className="w-10 h-10 rounded-full flex justify-center items-center bg-[#D0F4FF]">
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#2da5b4"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 6v6l4 2" />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+              How to{" "}
+              <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] bg-clip-text text-transparent">
+                Use
+              </span>{" "}
+              StyleSense
+            </h3>
+          </div>
+
           <p className="text-gray-700 text-lg mb-8">
             Using StyleSense is as easy as dressing up! Follow these simple steps to discover your perfect look:
           </p>
-          <ul className="space-y-5 text-base md:text-lg text-gray-800">
+          <ul className="space-y-2 text-base md:text-lg text-gray-800">
             <li className="flex items-start gap-3">
               <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
               Upload your photo showcasing your current outfit.
@@ -147,12 +177,79 @@ export default function Home() {
           <img
             src="/use.webp"
             alt="How StyleSense works"
-            className="w-full max-w-lg rounded-2xl shadow-xl"
+            className="w-full max-w-lg rounded-2xl"
           />
         </div>
       </div>
     </section>
 
+    <section className="relative w-full px-6 py-20 bg-[#FBFBF9] overflow-hidden">
+      {/* Gradient background blur */}
+      <div className="absolute w-[700px] h-[500px] bg-[#3ee8ff] rounded-full blur-3xl opacity-20 bottom-[-100px] right-[-150px] z-[0]"></div>
+      <div className="absolute w-[700px] h-[500px] bg-[#3ee8ff] rounded-full blur-3xl opacity-20 top-[-100px] left-[-100px] z-[0]"></div>
+
+      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 items-center gap-16 z-10">
+        {/* Left Side Image */}
+        <div className="w-full">
+          <img
+            src="/feature_1.webp" // replace with your actual image
+            alt="Virtual try-on"
+            className="w-full max-w-2xl rounded-xl"
+          />
+        </div>
+
+        {/* Right Side Text */}
+        <div className="flex flex-col justify-center">
+          {/* Icon Circle */}
+          <div className="w-14 h-14 p-2 rounded-full bg-[#EAFDFF] mb-4">
+            <div className="w-10 h-10 rounded-full flex justify-center items-center bg-[#D0F4FF]">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#2da5b4"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M4 21v-2a4 4 0 0 1 3-3.87" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+            Try On Clothes Online with{" "}
+            <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] bg-clip-text text-transparent">
+              AI
+            </span>
+          </h3>
+
+          {/* Description */}
+          <p className="text-gray-700 text-base md:text-lg max-w-xl">
+            Experience the future of shopping! Upload your image and instantly try on new styles. No more guesswork — just personalized looks curated for your body, vibe, and personality. Powered by smart AI, styled by you.
+          </p>
+
+          {/* CTA Button */}
+          <button className="mt-8 px-6 py-3 text-md text-white font-bold rounded-full bg-gradient-to-r from-[#2da5b4] to-[#3ee8ff] shadow-md hover:scale-105 transition-transform duration-200 w-max">
+            Try it now
+          </button>
+        </div>
+      </div>
+    </section>
+    <section className="container mx-auto max-w-6xl">
+      <UseCases />
+    </section>
+    <section className="bg-[#FBFBF9]  container mx-auto">
+      <Subscribe />
+    </section>
+
+    <section className="">
+      <FAQSection />
+    </section>
 
 
   </>

@@ -16,7 +16,7 @@ export default function AboutUs() {
                 className="text-4xl md:text-5xl font-bold text-center mb-6"
             >
                 What is{" "}
-                <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-[#2da5b4] via-[#2da5b4] to-[#2da5b4] text-transparent bg-clip-text">
                     StyleSense
                 </span>
                 ?
