@@ -21,7 +21,8 @@ export default function Navbar() {
         <header className="w-full h-16 fixed top-0 left-0 z-50 bg-white backdrop-blur-md shadow-xl shadow-[#3ee8ff]/10">
             <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" className="flex items-center tracking-wide text-3xl font-bold text-[#2C2C2C] space-x-3">
+                <Link href="/" data-aos="fade-left"
+                    data-aos-delay="100" className="flex items-center tracking-wide text-3xl font-bold text-[#2C2C2C] space-x-3">
                     <Image
                         src="/icon2.png"
                         alt="StyleSense Logo"
@@ -36,28 +37,33 @@ export default function Navbar() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center space-x-6">
-                    <Link href="/explore" className="flex items-center hover:scale-103 gap-1.5 text text-[#2C2C2C] hover:text-[#2da5b4] transition">
+                    <Link data-aos="fade-right"
+                        data-aos-delay="600" href="/explore" className="flex items-center hover:scale-103 gap-1.5 text text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Shirt size={16.5} />
                         Explore Styles
                     </Link>
-                    <Link href="/upload" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
+                    <Link data-aos="fade-right"
+                        data-aos-delay="500" href="/upload" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Upload size={16.5} />
                         Upload Style
                     </Link>
-                    <Link href="/about" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
+                    <Link data-aos="fade-right"
+                        data-aos-delay="400" href="/about" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Info size={16.5} />
                         About Us
                     </Link>
 
                     {/* Auth Buttons */}
-                    <button
+                    <button data-aos="fade-right"
+                        data-aos-delay="300"
                         onClick={() => setShowLogin(true)}
                         className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-2xl text-[#2C2C2C] hover:bg-[#3ee8ff]/20 transition border border-[#E0D7F8]"
                     >
                         <LogIn size={16} />
                         Login
                     </button>
-                    <button
+                    <button data-aos="fade-right"
+                        data-aos-delay="200"
                         onClick={() => setShowSignup(true)}
                         className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-xl bg-[#2da5b4] text-white hover:bg-[#63a2aa] transition"
                     >

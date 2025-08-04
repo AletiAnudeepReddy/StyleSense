@@ -55,18 +55,21 @@ export default function FAQSection() {
     return (
         <section className="bg-[#FBFBF9] py-15 pb-20 px-4 sm:px-8">
             <div className="max-w-4xl mx-auto text-center mb-9">
-                <h2 className="text-4xl font-bold text-gray-700">
+                <h2 data-aos="fade-down"
+                    data-aos-delay="50" className="text-4xl font-bold text-gray-700">
                     Frequently Asked{" "}
                     <span className="bg-gradient-to-r from-[#2da5b4] to-[#3ee8ff] text-transparent bg-clip-text drop-shadow-[0_1px_10px_rgba(255,255,255,0.8)]">
                         Questions
                     </span>
                 </h2>
-                <p className="mt-4 text-gray-600">Everything you need to know about using StyleSense</p>
+                <p data-aos="zoom-in"
+                    data-aos-delay="100" className="mt-4 text-gray-600">Everything you need to know about using StyleSense</p>
             </div>
 
             <div className="space-y-2 max-w-5xl mx-auto">
                 {faqs.map((faq, index) => (
-                    <div
+                    <div data-aos="zoom-out"
+                        data-aos-delay="100"
                         key={index}
                         className="border border-gray-200 rounded-lg p-5 py-3 shadow-sm bg-white transition duration-300"
                     >

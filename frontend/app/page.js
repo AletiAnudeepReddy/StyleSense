@@ -13,7 +13,8 @@ export default function Home() {
 
       {/* Center Content */}
       <div className="relative mt-8 z-10 max-w-5xl text-center">
-        <h1 className="text-5xl text-gray-700 font-bold leading-tight mb-4">
+        <h1 data-aos="zoom-out"
+          data-aos-delay="300" className="text-5xl text-gray-700 font-bold leading-tight mb-4">
           Style meets Intelligence<br />
           with
 
@@ -22,7 +23,8 @@ export default function Home() {
           </span>
         </h1>
 
-        <p className="text-lg text-[#3b3b3b] max-w-2xl mx-auto">
+        <p data-aos="zoom-in"
+          data-aos-delay="350" className="text-lg text-[#3b3b3b] max-w-2xl mx-auto">
           Upload a photo and let our intelligent stylist suggest outfits that match your vibe.
         </p>
       </div>
@@ -31,7 +33,8 @@ export default function Home() {
       {/* Upload Section */}
       <div className="relative z-10 mt-16 grid grid-cols-1 md:grid-cols-5 gap-5 items-center w-full max-w-6xl mx-auto">
         {/* Left Upload Area (2/5) */}
-        <div className="col-span-2 bg-white rounded-3xl p-4 text-center border border-[#f3f3f3]">
+        <div data-aos="fade-right"
+          data-aos-delay="200" className="col-span-2 bg-white rounded-3xl p-4 text-center border border-[#f3f3f3]">
           <div className="px-6 sm:px-12 py-6 sm:py-10 border border-dashed border-[#d8d8db] rounded-2xl">
             <div className="text-center max-w-md mx-auto space-y-4">
               <button className="inline-flex items-center justify-center w-full py-3 px-4 bg-[#2da5b4] rounded-full text-white hover:bg-[#d4767e] transition h-[56px] text-lg font-semibold">
@@ -74,7 +77,8 @@ export default function Home() {
         </div>
 
         {/* Right Banner Image (3/5) */}
-        <div className="col-span-3 flex justify-center">
+        <div data-aos="fade-left"
+          data-aos-delay="200" className="col-span-3 flex justify-center">
           <Image
             src="/banner.webp"
             alt="Fashion Banner"
@@ -87,7 +91,8 @@ export default function Home() {
 
     </div>
     <div className="container max-w-6xl mx-auto py-20 pb-4">
-      <p className="font-bold text-2xl leading-[22px] text-center mb-8 text-neutral-500">
+      <p data-aos="fade-down"
+        data-aos-delay="0" className="font-bold text-2xl leading-[22px] text-center mb-8 text-neutral-500">
         Trusted by fashion-forward platforms
       </p>
       <div className="w-full inline-flex mb-7 flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
@@ -140,7 +145,8 @@ export default function Home() {
             </div>
 
             {/* Title */}
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+            <h3 data-aos="fade-right"
+              data-aos-delay="50" className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
               How to{" "}
               <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] bg-clip-text text-transparent">
                 Use
@@ -149,23 +155,28 @@ export default function Home() {
             </h3>
           </div>
 
-          <p className="text-gray-700 text-lg mb-8">
+          <p data-aos="fade-right"
+            data-aos-delay="150" className="text-gray-700 text-lg mb-8">
             Using StyleSense is as easy as dressing up! Follow these simple steps to discover your perfect look:
           </p>
           <ul className="space-y-2 text-base md:text-lg text-gray-800">
-            <li className="flex items-start gap-3">
+            <li data-aos="fade-right"
+              data-aos-delay="200" className="flex items-start gap-3">
               <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
               Upload your photo showcasing your current outfit.
             </li>
-            <li className="flex items-start gap-3">
+            <li data-aos="fade-right"
+              data-aos-delay="250" className="flex items-start gap-3">
               <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
               Our AI detects your fashion style using Deep Learning.
             </li>
-            <li className="flex items-start gap-3">
+            <li data-aos="fade-right"
+              data-aos-delay="300" className="flex items-start gap-3">
               <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
               Get curated outfit recommendations tailored to your style.
             </li>
-            <li className="flex items-start gap-3">
+            <li data-aos="fade-right"
+              data-aos-delay="350" className="flex items-start gap-3">
               <span className="w-3 h-3 mt-2 bg-[#2da5b4] rounded-full shrink-0"></span>
               Explore similar styles and shop them instantly.
             </li>
@@ -173,7 +184,9 @@ export default function Home() {
         </div>
 
         {/* Illustration */}
-        <div className="relative w-full flex justify-center">
+        <div data-aos="fade-left"
+          data-aos-delay="150" className="relative w-full flex justify-center">
+
           <img
             src="/use.webp"
             alt="How StyleSense works"
@@ -190,7 +203,8 @@ export default function Home() {
 
       <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 items-center gap-16 z-10">
         {/* Left Side Image */}
-        <div className="w-full">
+        <div data-aos="fade-right"
+          data-aos-delay="50" className="w-full">
           <img
             src="/feature_1.webp" // replace with your actual image
             alt="Virtual try-on"
@@ -221,7 +235,8 @@ export default function Home() {
           </div>
 
           {/* Title */}
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+          <h3 data-aos="fade-left"
+            data-aos-delay="100" className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
             Try On Clothes Online with{" "}
             <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] bg-clip-text text-transparent">
               AI
@@ -229,12 +244,14 @@ export default function Home() {
           </h3>
 
           {/* Description */}
-          <p className="text-gray-700 text-base md:text-lg max-w-xl">
+          <p data-aos="fade-left"
+            data-aos-delay="200" className="text-gray-700 text-base md:text-lg max-w-xl">
             Experience the future of shopping! Upload your image and instantly try on new styles. No more guesswork — just personalized looks curated for your body, vibe, and personality. Powered by smart AI, styled by you.
           </p>
 
           {/* CTA Button */}
-          <button className="mt-8 px-6 py-3 text-md text-white font-bold rounded-full bg-gradient-to-r from-[#2da5b4] to-[#3ee8ff] shadow-md hover:scale-105 transition-transform duration-200 w-max">
+          <button data-aos="fade-up"
+            data-aos-delay="250" className="mt-8 px-6 py-3 text-md text-white font-bold rounded-full bg-gradient-to-r from-[#2da5b4] to-[#3ee8ff] shadow-md hover:scale-105 transition-transform duration-200 w-max">
             Try it now
           </button>
         </div>
