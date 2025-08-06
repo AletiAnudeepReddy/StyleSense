@@ -102,7 +102,7 @@ export default function Home() {
           <li><img src="/logos/shopify.webp" height="48" width="140" alt="Shopify" /></li>
           <li><img src="/logos/hm.png" height="30" width="80" alt="H&M" /></li>
           <li><img src="/logos/myntra.png" height="48" width="130" alt="Myntra" /></li>
-          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="140" alt="Urban Outfitters" /></li>
+          <li><img src="/logos/urbanoutfitters.png" height="48" className="opacity-65" width="80" alt="Urban Outfitters" /></li>
           <li><img src="/logos/pinterest.png" className="opacity-65" height="35" width="60" alt="Pinterest" /></li>
         </ul>
         <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_li]:mobile:mx-6 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
