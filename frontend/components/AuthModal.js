@@ -2,12 +2,20 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { IoClose, IoMailOutline, IoLockClosedOutline, IoPersonOutline } from 'react-icons/io5';
+import {
+    IoClose,
+    IoMailOutline,
+    IoLockClosedOutline,
+    IoPersonOutline,
+} from 'react-icons/io5';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
 export default function AuthModal({ isOpen, setIsOpen }) {
+    const router = useRouter();
     const [isLogin, setIsLogin] = useState(true);
     const [fullname, setFullname] = useState('');
     const [email, setEmail] = useState('');
@@ -37,22 +45,66 @@ export default function AuthModal({ isOpen, setIsOpen }) {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
-        setTimeout(() => {
-            notify(isLogin ? 'Login simulated!' : 'Signup simulated!', 'success');
+        try {
+            const endpoint = isLogin ? '/api/login' : '/api/signup';
+
+            const res = await fetch(endpoint, {
+                method: 'POST',
+                body: JSON.stringify({ fullname, email, password }),
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                notify(data.message || 'Something went wrong', 'error');
+                setLoading(false);
+                return;
+            }
+
+            notify(data.message, 'success');
+
+            if (isLogin) {
+                const loginRes = await signIn('credentials', {
+                    redirect: false,
+                    email,
+                    password,
+                });
+
+                if (loginRes?.ok) {
+                    router.push('/upload');
+                    setIsOpen(false);
+                } else {
+                    notify('Invalid email or password', 'error');
+                }
+            } else {
+                setIsOpen(false);
+            }
+
+            setFullname('');
+            setEmail('');
+            setPassword('');
+        } catch (error) {
+            console.error(error);
+            notify('Something went wrong. Please try again later.', 'error');
+        } finally {
             setLoading(false);
-            setIsOpen(false);
-        }, 1000);
+        }
     };
 
     return (
         <>
             <ToastContainer />
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(false)}>
+                <Dialog
+                    as="div"
+                    className="relative z-50"
+                    onClose={() => setIsOpen(false)}
+                >
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-200"
@@ -66,9 +118,7 @@ export default function AuthModal({ isOpen, setIsOpen }) {
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-y-auto">
-                    
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
-                        
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-out duration-300"
@@ -147,7 +197,7 @@ export default function AuthModal({ isOpen, setIsOpen }) {
 
                                     <button
                                         className="w-full py-2 border-2 border-[#2da5b4]/30 rounded-3xl hover:scale-103 shadow-lg flex items-center bg-white/40 justify-center gap-3 hover:bg-white/70 transition text-gray-600 font-semibold"
-                                        onClick={() => notify('Google Sign-In simulated!')}
+                                        onClick={() => signIn('google', { callbackUrl: '/upload' })}
                                     >
                                         <FcGoogle size={22} />
                                         <span>Continue with Google</span>
@@ -155,7 +205,10 @@ export default function AuthModal({ isOpen, setIsOpen }) {
 
                                     <p className="mt-6 text-sm text-center text-gray-600">
                                         {isLogin ? "Don't have an account?" : 'Already have an account?'}{' '}
-                                        <button onClick={toggleMode} className="text-[#2da5b4] font-medium hover:underline">
+                                        <button
+                                            onClick={toggleMode}
+                                            className="text-[#2da5b4] font-medium hover:underline"
+                                        >
                                             {isLogin ? 'Sign Up' : 'Login'}
                                         </button>
                                     </p>

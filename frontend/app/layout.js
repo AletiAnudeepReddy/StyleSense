@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +28,14 @@ export default function RootLayout({ children }) {
     })
   }, [])
   return (
-    
+
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        {children}
+      ><SessionProvider>
+          <Navbar />
+          {children}
+        </SessionProvider>
         <Footer />
       </body>
     </html>

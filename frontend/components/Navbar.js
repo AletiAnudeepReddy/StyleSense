@@ -9,20 +9,26 @@ import {
     Info,
     LogIn,
     UserPlus,
+    LogOut,
+    User,
 } from "lucide-react";
-import AuthModal from "@/components/AuthModal"; // ✅ import modal
+import AuthModal from "@/components/AuthModal";
+import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showSignup, setShowSignup] = useState(false);
+    const { data: session } = useSession();
+    const isLoggedIn = !!session;
+    const router = useRouter();
 
     return (
         <header className="w-full h-16 fixed top-0 left-0 z-50 bg-white backdrop-blur-md shadow-xl shadow-[#3ee8ff]/10">
             <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" data-aos="fade-left"
-                    data-aos-delay="100" className="flex items-center tracking-wide text-3xl font-bold text-[#2C2C2C] space-x-3">
+                <Link href="/" className="flex items-center tracking-wide text-3xl font-bold text-[#2C2C2C] space-x-3">
                     <Image
                         src="/icon2.png"
                         alt="StyleSense Logo"
@@ -37,42 +43,64 @@ export default function Navbar() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center space-x-6">
-                    <Link data-aos="fade-right"
-                        data-aos-delay="600" href="/explore" className="flex items-center hover:scale-103 gap-1.5 text text-[#2C2C2C] hover:text-[#2da5b4] transition">
+                    <Link href="/explore" className="flex items-center gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Shirt size={16.5} />
                         Explore Styles
                     </Link>
-                    <Link data-aos="fade-right"
-                        data-aos-delay="500" href="/upload" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
+                    <Link href="/upload" className="flex items-center gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Upload size={16.5} />
                         Upload Style
                     </Link>
-                    <Link data-aos="fade-right"
-                        data-aos-delay="400" href="/about" className="flex items-center hover:scale-103 gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
+                    <Link href="/about" className="flex items-center gap-1.5 text-[#2C2C2C] hover:text-[#2da5b4] transition">
                         <Info size={16.5} />
                         About Us
                     </Link>
 
                     {/* Auth Buttons */}
-                    <button data-aos="fade-right"
-                        data-aos-delay="300"
-                        onClick={() => setShowLogin(true)}
-                        className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-2xl text-[#2C2C2C] hover:bg-[#3ee8ff]/20 transition border border-[#E0D7F8]"
-                    >
-                        <LogIn size={16} />
-                        Login
-                    </button>
-                    <button data-aos="fade-right"
-                        data-aos-delay="200"
-                        onClick={() => setShowSignup(true)}
-                        className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-xl bg-[#2da5b4] text-white hover:bg-[#63a2aa] transition"
-                    >
-                        <UserPlus size={16} />
-                        Sign Up
-                    </button>
+                    {!isLoggedIn ? (
+                        <>
+                            <button
+                                onClick={() => setShowLogin(true)}
+                                className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-2xl text-[#2C2C2C] hover:bg-[#3ee8ff]/20 transition border border-[#E0D7F8]"
+                            >
+                                <LogIn size={16} />
+                                Login
+                            </button>
+                            <button
+                                onClick={() => setShowSignup(true)}
+                                className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-xl bg-[#2da5b4] text-white hover:bg-[#63a2aa] transition"
+                            >
+                                <UserPlus size={16} />
+                                Sign Up
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <button
+                                onClick={() => {
+                                    const username = session.user?.email?.split('@')[0] || "profile";
+                                    router.push(`/${username}`);
+                                }}
+                                className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-2xl text-[#2C2C2C] hover:bg-[#3ee8ff]/20 transition border border-[#E0D7F8]"
+                            >
+                                <User size={16} />
+                                Dashboard
+                            </button>
+                            <button
+                                onClick={async () => {
+                                    await signOut({ redirect: false });
+                                    router.push("/");
+                                }}
+                                className="flex items-center gap-2 px-4 py-1.5 hover:scale-103 rounded-xl bg-[#e6737c] text-white hover:bg-red-400 transition"
+                            >
+                                <LogOut size={16} />
+                                Logout
+                            </button>
+                        </>
+                    )}
                 </nav>
 
-                {/* Mobile Menu Toggle */}
+                {/* Mobile Toggle */}
                 <button className="md:hidden text-[#2C2C2C]" onClick={() => setIsOpen(!isOpen)}>
                     <Menu size={28} />
                 </button>
@@ -93,18 +121,44 @@ export default function Navbar() {
                         <Info size={18} />
                         About Us
                     </Link>
-                    <button
-                        onClick={() => setShowLogin(true)}
-                        className="block px-4 py-2 rounded-full border border-[#E0D7F8] text-center text-[#2C2C2C] hover:bg-[#E0D7F8]/40 transition"
-                    >
-                        Login
-                    </button>
-                    <button
-                        onClick={() => setShowSignup(true)}
-                        className="block px-4 py-2 rounded-full bg-[#f5bcc2] text-center text-[#2C2C2C] hover:bg-[#fcb0b7] transition"
-                    >
-                        Sign Up
-                    </button>
+
+                    {!isLoggedIn ? (
+                        <>
+                            <button
+                                onClick={() => setShowLogin(true)}
+                                className="block px-4 py-2 rounded-full border border-[#E0D7F8] text-center text-[#2C2C2C] hover:bg-[#E0D7F8]/40 transition"
+                            >
+                                Login
+                            </button>
+                            <button
+                                onClick={() => setShowSignup(true)}
+                                className="block px-4 py-2 rounded-full bg-[#f5bcc2] text-center text-[#2C2C2C] hover:bg-[#fcb0b7] transition"
+                            >
+                                Sign Up
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <button
+                                onClick={() => {
+                                    const username = session.user?.email?.split('@')[0] || "profile";
+                                    router.push(`/${username}`);
+                                }}
+                                className="block px-4 py-2 rounded-full border border-[#E0D7F8] text-center text-[#2C2C2C] hover:bg-[#E0D7F8]/40 transition"
+                            >
+                                Dashboard
+                            </button>
+                            <button
+                                onClick={async () => {
+                                    await signOut({ redirect: false });
+                                    router.push("/");
+                                }}
+                                className="block px-4 py-2 rounded-full bg-[#d4767e] text-center text-white hover:bg-[#d4767e] transition"
+                            >
+                                Logout
+                            </button>
+                        </>
+                    )}
                 </div>
             )}
 
