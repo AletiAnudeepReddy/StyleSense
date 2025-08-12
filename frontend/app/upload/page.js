@@ -42,7 +42,7 @@ export default function UploadStylePage() {
         <div className="absolute w-[650px] h-[650px] bg-[#3ee8ff] rounded-full blur-[160px] opacity-20 top-[-250px] left-[-200px] z-[0]"></div>
                 <div className="absolute w-[650px] h-[650px] bg-[#3ee8ff] rounded-full blur-[180px] opacity-20 bottom-[-200px] right-[-0px] z-[0]"></div>
                 
-            <div className="max-w-5xl relative mx-auto bg-[#FBFBF9] border-2 border-gray-300/88 rounded-2xl z-10 p-8">
+            <div className="max-w-5xl relative mx-auto bg-[#FBFBF9] border-2 border-gray-300/50 rounded-2xl z-10 p-15 py-12">
                 <h1 className="text-3xl font-bold text-center text-gray-600 mb-2">Upload Your <span className="bg-gradient-to-r from-[#2da5b4] via-[#3ee8ff] to-[#2da5b4] text-transparent bg-clip-text">Style</span></h1>
                 <p className="text-center text-gray-500 mb-8">
                     Upload your outfit to get personalized fashion recommendations.

@@ -26,10 +26,11 @@ transform = transforms.Compose([
 ])
 
 dataset = DeepFashionDataset(
-    img_dir="../dataset/Img",   # adjust path if needed
-    annotations_file="../dataset/Anno/list_category_img.txt",
+    img_dir="dataset/selected_images",
+    annotations_file="dataset/labels_front.csv",
     transform=transform
 )
+
 
 # Split data
 train_size = int(0.8 * len(dataset))
