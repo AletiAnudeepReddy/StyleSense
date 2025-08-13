@@ -5,7 +5,7 @@ from data_loader import DeepFashionDataset
 
 # ===== Config =====
 MODEL_PATH = "models/style_sense_resnet50.pth"
-IMG_PATH = "../dataset/selected_images/MEN-Denim-id_00000089-28_1_front.jpg"  # Change this to your test image path
+IMG_PATH = "..\dataset\selected_images\WOMEN-Tees_Tanks-id_00007979-03_1_front.jpg"  # Change this to your test image path
 
 # ===== Transform (same as training) =====
 transform = transforms.Compose([
