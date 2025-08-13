@@ -12,9 +12,9 @@ import os
 os.makedirs("models", exist_ok=True)
 
 # Constants
-NUM_CLASSES = 8
+
 BATCH_SIZE = 32
-EPOCHS = 5
+EPOCHS = 2
 LR = 1e-4
 
 # Data transforms
@@ -26,10 +26,11 @@ transform = transforms.Compose([
 ])
 
 dataset = DeepFashionDataset(
-    img_dir="dataset/selected_images",
-    annotations_file="dataset/labels_front.csv",
+    img_dir="../dataset/selected_images",
+    annotations_file="../dataset/labels_front.csv",
     transform=transform
 )
+NUM_CLASSES = len(dataset.label_to_id)
 
 
 # Split data
